@@ -1,15 +1,23 @@
+#ifndef MENU_HEADER
+#define MENU_HEADER
+
+#include "Item.hpp"
 #include <string>
 #include <list>
 
 using namespace std;
 
 class Menu {
-
-    string name;
-    list<int> items;
+    private:
+        string name;
+        list<Item> items;
 
     public:
-        Menu(string name);
+        Menu(string name, list<Item> items);
 
-        void displayMenu();
+        string get_name();
+        void set_name(string name);
+        void display_menu();
 };
+
+#endif // MENU_HEADER

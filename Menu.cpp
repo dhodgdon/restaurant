@@ -1,17 +1,27 @@
 #include "Menu.hpp"
 #include <string>
+#include <list>
+#include <iostream>
 
 using namespace std;
 
-Menu::Menu(string name) : name(name) {}
+Menu::Menu(string name, list<Item> items) : name(name), items(items) {
 
-// {
+}
 
-//     string name;
-//     list<int> items;
+string Menu::get_name() {
+    return name;
+}
 
-//     public:
-//         Menu(string name);
+void Menu::set_name(string name) {
+    Menu::name = name;
+}
 
-//         void displayMenu();
-// };
+void Menu::display_menu() {
+    int count = 1;
+    for (Item item : Menu::items) {
+        cout << count << ". " << item.get_name() << ", " << item.get_cost() << "\n";
+        count++;
+    }
+}
+
