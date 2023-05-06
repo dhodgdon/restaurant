@@ -17,7 +17,8 @@ void Order::display_order() {
     float subtotal_cost = 0;
 
     for (Item item : Order::order_items) {
-        cout << count << ". " << item.get_name() << ", " << item.get_cost() << endl;
+        cout << count << ". " << item.get_name() << ", $";
+        printf("%.2f \n", item.get_cost());
         count++;
         subtotal_cost += item.get_cost();
     }
@@ -25,7 +26,7 @@ void Order::display_order() {
     float tax = round(0.06 * subtotal_cost * 100) / 100;
     float total_cost = tax + subtotal_cost;
 
-    cout << "Subtotal: " << subtotal_cost << endl;
-    cout << "Total Tax: " << tax << endl;
-    cout << "Total: " << total_cost << endl;
+    printf("Subtotal: $%.2f \n", subtotal_cost);
+    printf("Total Tax: $%.2f \n", tax);
+    printf("Total: $%.2f \n\n", total_cost);
 }

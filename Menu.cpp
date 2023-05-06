@@ -20,7 +20,8 @@ void Menu::set_name(string name) {
 void Menu::display_menu() {
     int count = 1;
     for (Item item : Menu::items) {
-        cout << count << ". " << item.get_name() << ", " << item.get_cost() << "\n";
+        cout << count << ". " << item.get_name() << ", $";
+        printf("%.2f \n", item.get_cost());
         count++;
     }
 }
